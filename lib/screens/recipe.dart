@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:receipe_app/screens/home.dart';
+import 'package:receipe_app/screens/search.dart';
 import 'package:receipe_app/utils/colors.dart';
 
 class Recipe extends StatefulWidget {
@@ -258,14 +260,9 @@ class _RecipeState extends State<Recipe> {
                           width: 100,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(
-                              width: 1,
-                              color: Colors.grey
-                            )
-                            
-                          ),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
+                              border: Border.all(width: 1, color: Colors.grey)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -287,13 +284,16 @@ class _RecipeState extends State<Recipe> {
                 ),
               ),
               SizedBox(height: 10),
-              Text("Details",
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                color: Colors.black,
-                fontSize: 15
-              ),),
-              SizedBox(height: 10,),
+              Text(
+                "Details",
+                style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                    fontSize: 15),
+              ),
+              SizedBox(
+                height: 10,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -303,90 +303,84 @@ class _RecipeState extends State<Recipe> {
                       width: 93,
                       height: 65,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular( 10),
-                        border: Border.all(
-                          width: 1,
-                          color: maincolor
-                        )
-                      ),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(width: 1, color: maincolor)),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                          Text("Size",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14,
-                            color: maincolor
-                          ),),
-                           Text("Medium",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15,
-                            color: Colors.black
-                          ),)
-                        ]),
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Size",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                    color: maincolor),
+                              ),
+                              Text(
+                                "Medium",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                    color: Colors.black),
+                              )
+                            ]),
                       ),
                     ),
-                     Container(
+                    Container(
                       width: 93,
                       height: 65,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular( 10),
-                        border: Border.all(
-                          width: 1,
-                          color: maincolor
-                        )
-                      ),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(width: 1, color: maincolor)),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                          Text("Energy",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14,
-                            color: maincolor
-                          ),),
-                           Text("554 kcal",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15,
-                            color: Colors.black
-                          ),)
-                        ]),
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Energy",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                    color: maincolor),
+                              ),
+                              Text(
+                                "554 kcal",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                    color: Colors.black),
+                              )
+                            ]),
                       ),
                     ),
-                     Container(
+                    Container(
                       width: 93,
                       height: 65,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular( 10),
-                        border: Border.all(
-                          width: 1,
-                          color: maincolor
-                        )
-                      ),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(width: 1, color: maincolor)),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                          Text("Delivery",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14,
-                            color: maincolor
-                          ),),
-                           Text("45 min",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15,
-                            color: Colors.black
-                          ),)
-                        ]),
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Delivery",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                    color: maincolor),
+                              ),
+                              Text(
+                                "45 min",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                    color: Colors.black),
+                              )
+                            ]),
                       ),
                     )
                   ],
@@ -421,23 +415,34 @@ class _RecipeState extends State<Recipe> {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               Container(
                 width: 327,
                 height: 61,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular( 15),
+                  borderRadius: BorderRadius.circular(15),
                   color: maincolor,
-                  
                 ),
-                child: Center(child: Text("Add to cart",
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 22,
-                  color: Colors.white
-                ),)),
+                child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Get.to(() => Search());
+                    },
+                    child: Text(
+                      "Add to cart",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 22,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
               ),
-              SizedBox(height: 10,)
+              SizedBox(
+                height: 10,
+              )
             ],
           ),
         ),
