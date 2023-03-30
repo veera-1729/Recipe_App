@@ -46,12 +46,17 @@ class _HomescreenState extends State<Homescreen> {
                   children: [
                     Column(
                       children: [
-                        Text(
-                          "Location",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 15,
-                              color: Color.fromRGBO(5, 5, 5, 1)),
+                        Row(
+                          children: [
+                            Icon(Icons.place,color: maincolor,),
+                            Text(
+                              "Location",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 15,
+                                  color: Color.fromRGBO(5, 5, 5, 1)),
+                            ),
+                          ],
                         ),
                         Text("Ap , Tirupati")
                       ],
@@ -68,6 +73,8 @@ class _HomescreenState extends State<Homescreen> {
                     )
                   ],
                 ),
+                SizedBox(height: 15,),
+                Image.asset("assets/images/bike.png"),
                 SizedBox(
                   height: 25,
                 ),
