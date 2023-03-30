@@ -1,4 +1,5 @@
  import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:receipe_app/screens/home.dart';
 import 'package:receipe_app/screens/recipe.dart';
 import 'package:receipe_app/screens/splash.dart';
@@ -17,7 +18,7 @@ import 'package:receipe_app/utils/navigation.dart';
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
 
       home:SplashPage(),
       //home:Home(),

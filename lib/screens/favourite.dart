@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:receipe_app/utils/appbar.dart';
 import 'package:receipe_app/utils/colors.dart';
 
@@ -13,14 +14,24 @@ class Favourite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appbar(),
+      appBar: AppBar(
+        
+        title: Image.asset(
+          "assets/images/food logo.png",
+          width: 100,
+          height: 25,
+        ),
+        backgroundColor: background,
+        centerTitle: true,
+        
+      ),
       body: SafeArea(
         child: ListView.builder(
           itemCount: 4,
           itemBuilder: (context, index) {
             return Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 13.0, horizontal: 13),
+                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10),
               child: Container(
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(20),
@@ -62,7 +73,7 @@ class Favourite extends StatelessWidget {
                         ),
                         Icon(
                           Icons.favorite,
-                          color: Colors.red,
+                          color: maincolor,
                           size: 27,
                         ),
                       ],

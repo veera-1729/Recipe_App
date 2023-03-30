@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:receipe_app/screens/Home_screens.dart';
 import 'package:receipe_app/screens/recipe.dart';
 import 'package:receipe_app/utils/colors.dart';
 
@@ -19,7 +20,7 @@ class Navigation extends StatefulWidget {
 class _NavigationState extends State<Navigation> {
   int index = 0;
   List Screens = <Widget>[
-    Home(),
+    Homescreen(),
     Categories(),
     Search(),
     Favourite(),
@@ -38,7 +39,7 @@ class _NavigationState extends State<Navigation> {
             },
           );
         },
-        child: Icon(Icons.search),
+        child: Icon(Icons.card_giftcard_outlined),
         backgroundColor: maincolor,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

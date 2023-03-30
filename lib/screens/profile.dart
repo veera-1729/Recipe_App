@@ -65,33 +65,32 @@ class Profile extends StatelessWidget {
                 itemBuilder: (BuildContext context,int index) {
                   return  Padding(
                     padding: const EdgeInsets.only(bottom:10.0,left: 10,right: 10),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            offset: Offset(0,1),
-                            color: Color.fromARGB(255, 214, 210, 210),
-                            blurRadius: 5,
-                            
-                          )
-                        ]
-                      ),
-                      child: ListTile(
-                        leading: Container(
-                          height:37,
-                          width: 37,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
+                    child: Material(
+                      elevation: 3,
+                       borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(width: 1,
+                          color: Colors.grey)
+                          
+                        ),
+                        child: ListTile(
+                          leading: Container(
+                            height:37,
+                            width: 37,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child:icons[index],
                           ),
-                          child:icons[index],
+                          title: Padding(
+                            padding: const EdgeInsets.only(bottom:4),
+                            child: Text(titls[index]),
+                          ),
+                                
+                          trailing: Icon(Icons.arrow_forward_ios_sharp,size:20),
                         ),
-                        title: Padding(
-                          padding: const EdgeInsets.only(bottom:4),
-                          child: Text(titls[index]),
-                        ),
-            
-                        trailing: Icon(Icons.arrow_forward_ios_sharp,size:20),
                       ),
                     ),
                   );

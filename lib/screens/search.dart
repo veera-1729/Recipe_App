@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:receipe_app/utils/appbar.dart';
+import 'package:receipe_app/utils/colors.dart';
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -7,7 +9,17 @@ class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appbar(),
+      appBar: AppBar(
+        
+        title: Image.asset(
+          "assets/images/food logo.png",
+          width: 100,
+          height: 25,
+        ),
+        backgroundColor: background,
+        centerTitle: true,
+        
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical:20.0,horizontal: 10),
