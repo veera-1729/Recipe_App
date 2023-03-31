@@ -16,7 +16,20 @@ class Search extends StatefulWidget {
 class _SearchState extends State<Search> {
   List<int> list = [1, 1, 1, 1, 1];
   List<bool> extra = [false, false, false, false, false];
+  List<int> price = [120, 120, 120, 120, 120];
+  int totalPrice = 600;
   // bool extra = false;
+
+  void calculateTotalPrice(){
+    int v = 0;
+    for (int i = 0; i < price.length; i++) {
+      v += price[i];
+    }
+    setState(() {
+      totalPrice = v;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +44,7 @@ class _SearchState extends State<Search> {
                   children: [
                     IconButton(
                         onPressed: () {
-                          Get.to(()=>Navigation())  ;
+                          Get.to(() => Navigation());
                         },
                         icon: const Icon(
                           Icons.arrow_back_ios,
@@ -52,7 +65,24 @@ class _SearchState extends State<Search> {
                 SizedBox(height: 40),
                 for (int i = 0; i < 5; i++) ...{
                   card(i),
-                }
+                },
+                InkWell(
+                  child: Container(
+                    height: 50,
+                    width: 200,
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: maincolor,
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: Center(
+                        child: Text(
+                      "Place Order (Rs.${totalPrice})",
+                      style: TextStyle(color: Colors.white, fontSize: 15,fontWeight: FontWeight.w600),
+                    )),
+                  ),
+                )
               ],
             ),
           ),
@@ -111,7 +141,9 @@ class _SearchState extends State<Search> {
                         onTap: () {
                           setState(() {
                             if (list[index] >= 2) list[index]--;
+                            price[index] = price[index] - 120;
                           });
+                          calculateTotalPrice();
                         },
                         child: Text(
                           "-",
@@ -128,7 +160,9 @@ class _SearchState extends State<Search> {
                         onTap: () {
                           setState(() {
                             list[index]++;
+                            price[index] = price[index] + 120;
                           });
+                          calculateTotalPrice();
                         },
                         child: Text(
                           "+",
@@ -164,7 +198,7 @@ class _SearchState extends State<Search> {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "Rs.534",
+                    "Rs.${price[index]}",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                   ),
                   Row(
